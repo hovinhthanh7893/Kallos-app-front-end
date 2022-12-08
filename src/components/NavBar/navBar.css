@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Playfair+Display&display=swap");
+
+.navbar {
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  z-index: 10;
+  right: 0;
+  top: 0;
+  left: 0;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navMain {
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navLogo {
+  margin-right: auto;
+  text-decoration: none;
+  color: white;
+  font-family: "Fredoka One", cursive;
+  font-size: 40px;
+  transition: 0.2s ease-in-out;
+}
+.navLogo:hover {
+  text-shadow: 0 0 10px gold, 0 0 10px goldenrod;
+}
+.navLogo:active {
+  transform: scale(0.95);
+}
+
+.navTit {
+  text-decoration: none;
+  color: white;
+}
+.navTit:hover {
+  text-shadow: 0 0 10px goldenrod, 0 0 20px goldenrod, 0 0 30px goldenrod;
+}
+.navTit:active {
+  transform: scale(0.9);
+}
+
+.navTitDis {
+  color: goldenrod;
+  font-style: italic;
+}
+
+.navRight {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2vw;
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+}
+
+.pageLine {
+  width: 100%;
+  height: 0.5px;
+  margin-top: 10px;
+  background: goldenrod;
+  animation: lineSpan 3s ease-in;
+}
+
+@keyframes lineSpan {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}

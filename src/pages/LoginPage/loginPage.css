@@ -1,0 +1,155 @@
+.login {
+  width: 80%;
+  min-height: 70vh;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  margin-right: 10vw;
+  margin-left: 10vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.signupFormBack {
+  width: 406px;
+  height: 406px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    132deg,
+    #6424dc,
+    #7a13aa,
+    #cf1bc0,
+    #f80759,
+    #ff9318
+  );
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  animation: moveGradient 8s alternate infinite;
+}
+.signupFormBack:hover .loginForm {
+  width: 395px;
+  height: 395px;
+  border-radius: 5px;
+}
+
+.loginFormBack {
+  width: 406px;
+  height: 406px;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    60deg,
+    #b721ff,
+    #2af598,
+    #fec051,
+    #fee140,
+    #fa709a
+  );
+  background-size: 300% 300%;
+  background-position: 0 50%;
+  animation: moveGradient 8s alternate infinite;
+}
+.loginFormBack:hover .loginForm {
+  width: 395px;
+  height: 395px;
+  border-radius: 5px;
+}
+
+.loginForm {
+  width: 400px;
+  height: 400px;
+  background: black;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  z-index: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+.loginTit {
+  font-family: "Galada", cursive;
+  font-size: 35px;
+  line-height: 32px;
+}
+
+.loginFormInput {
+  border: none;
+  width: 250px;
+  height: 22px;
+}
+.loginFormInput:focus {
+  outline-color: goldenrod;
+}
+
+.signupCheckBox {
+  display: flex;
+}
+.checkbox {
+  accent-color: orangered;
+}
+
+.signupButton {
+  width: 150px;
+  height: 50px;
+  background-image: linear-gradient(
+    to right,
+    #fc6076,
+    #ff9a44,
+    #ef9d43,
+    #e75516
+  );
+  background-size: 200% auto;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.signupButton:hover {
+  background-position: right center;
+  box-shadow: 0 3px 8px 0 rgba(252, 104, 110, 0.75);
+  transform: scale(1.02);
+}
+
+.loginButton {
+  width: 150px;
+  height: 50px;
+  background-image: linear-gradient(
+    to right,
+    #25aae1,
+    #40e495,
+    #30dd8a,
+    #2bb673
+  );
+  background-size: 200% auto;
+  border: none;
+  border-radius: 8px;
+  margin-top: 40px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.loginButton:hover {
+  background-position: right center;
+  box-shadow: 0 3px 8px 0 rgba(49, 196, 190, 0.75);
+  transform: scale(1.02);
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
