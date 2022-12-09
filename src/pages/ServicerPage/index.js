@@ -200,7 +200,7 @@ const ServicePage = () => {
               {servicerList.map((each) => (
                 <ProfileCard
                   key={each.id}
-                  id={each.userId}
+                  id={each.id}
                   name={each.user.name}
                   imageUrl={each.user.imageUrl}
                   star={each.star}
