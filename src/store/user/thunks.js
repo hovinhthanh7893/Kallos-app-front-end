@@ -1,17 +1,22 @@
 import { apiUrl } from "../../config/constants";
 import axios from "axios";
 import { selectToken } from "./selectors";
-import { loginSuccess, logOut, setError, tokenStillValid } from "./slice";
+import {
+  loginSuccess,
+  logOut,
+  setError,
+  tokenStillValid,
+  getFav,
+  getSer,
+} from "./slice";
 
 export const signUp =
-  (name, email, password, imageUrl, provideService) =>
-  async (dispatch, getState) => {
+  (name, email, password, provideService) => async (dispatch, getState) => {
     try {
       const response = await axios.post(`${apiUrl}/auth/signup`, {
         name,
         email,
         password,
-        imageUrl,
         provideService,
       });
       dispatch(loginSuccess(response.data));
@@ -48,13 +53,45 @@ export const getUserWithStoredToken = () => {
       dispatch(tokenStillValid({ user: response.data }));
     } catch (error) {
       if (error.response) {
-        console.log(error.response.message);
+        console.log(error.response.data.message);
       } else {
         console.log(error);
       }
       // if we get a 4xx or 5xx response,
       // get rid of the token by logging out
       dispatch(logOut());
+    }
+  };
+};
+
+export const getService = (id) => {
+  return async (dispatch, getState) => {
+    if (id === null) return;
+    try {
+      const response = await axios.get(`${apiUrl}/user/service/${id}`);
+      dispatch(getSer(response.data));
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data.message);
+      } else {
+        console.log(error);
+      }
+    }
+  };
+};
+
+export const getFavorites = (id) => {
+  return async (dispatch, getState) => {
+    if (id === null) return;
+    try {
+      const response = await axios.get(`${apiUrl}/user/favorite/${id}`);
+      dispatch(getFav(response.data));
+    } catch (error) {
+      if (error.response) {
+        console.log(error.response.data.message);
+      } else {
+        console.log(error);
+      }
     }
   };
 };

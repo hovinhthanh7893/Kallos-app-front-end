@@ -1,13 +1,13 @@
 import "./navBar.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectToken } from "../../store/user/selectors";
+import { selectProfile } from "../../store/user/selectors";
 import { logOut } from "../../store/user/slice";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, matchPath } from "react-router-dom";
 
 const NavBar = ({ user }) => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const token = useSelector(selectToken);
+  const profile = useSelector(selectProfile);
 
   return (
     <div className="navbar">
@@ -17,7 +17,7 @@ const NavBar = ({ user }) => {
         </Link>
 
         <div className="navRight">
-          {location.pathname === "/service" ? (
+          {location.pathname.includes("service") ? (
             <div className="navTitDis">Service</div>
           ) : (
             <Link to="/service" className="navTit">
@@ -25,7 +25,7 @@ const NavBar = ({ user }) => {
             </Link>
           )}
 
-          {!token ? (
+          {!profile ? (
             <div>
               {location.pathname === "/login" ? (
                 <div className="navTitDis">Login</div>
@@ -36,7 +36,7 @@ const NavBar = ({ user }) => {
               )}
             </div>
           ) : (
-            <div>
+            <div className="navRight">
               {location.pathname === "/message" ? (
                 <div className="navTitDis">Message</div>
               ) : (
@@ -44,10 +44,10 @@ const NavBar = ({ user }) => {
                   Message
                 </Link>
               )}
-              {location.pathname === "/user" ? (
+              {location.pathname.includes("user") ? (
                 <div className="navTitDis">Profile</div>
               ) : (
-                <Link to="/user" className="navTit">
+                <Link to={`/user/${profile.id}`} className="navTit">
                   Profile
                 </Link>
               )}

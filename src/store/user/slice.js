@@ -4,6 +4,8 @@ const initialState = {
   token: localStorage.getItem("token"),
   profile: null,
   error: null,
+  service: null,
+  favorite: null,
 };
 
 export const userSlice = createSlice({
@@ -21,6 +23,8 @@ export const userSlice = createSlice({
       state.token = null;
       state.profile = null;
       state.error = null;
+      state.service = null;
+      state.favorite = null;
     },
     setError: (state, action) => {
       state.error = action.payload;
@@ -28,10 +32,22 @@ export const userSlice = createSlice({
     tokenStillValid: (state, action) => {
       state.profile = action.payload.user;
     },
+    getSer: (state, action) => {
+      state.service = action.payload;
+    },
+    getFav: (state, action) => {
+      state.favorite = action.payload;
+    },
   },
 });
 
-export const { loginSuccess, logOut, setError, tokenStillValid } =
-  userSlice.actions;
+export const {
+  loginSuccess,
+  logOut,
+  setError,
+  tokenStillValid,
+  getSer,
+  getFav,
+} = userSlice.actions;
 
 export default userSlice.reducer;

@@ -118,6 +118,7 @@
   transition: all 0.2s ease-in-out;
 }
 .signupButton:hover {
+  text-shadow: 2px 2px 0 rgb(173, 16, 81);
   background-position: right center;
   box-shadow: 0 3px 8px 0 rgba(252, 104, 110, 0.75);
   transform: scale(1.02);
@@ -143,6 +144,7 @@
   transition: all 0.2s ease-in-out;
 }
 .loginButton:hover {
+  text-shadow: 2px 2px 0 rgb(15, 102, 44);
   background-position: right center;
   box-shadow: 0 3px 8px 0 rgba(49, 196, 190, 0.75);
   transform: scale(1.02);

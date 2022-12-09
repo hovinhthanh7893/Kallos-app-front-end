@@ -1,0 +1,144 @@
+.servicePage {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.serviceForm {
+  width: 80vw;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceLocation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.serviceSelectForm {
+  border: white 2px solid;
+  outline: none;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  border-radius: 25px;
+  padding-left: 10px;
+  width: 250px;
+  height: 40px;
+}
+
+.serviceFormLine {
+  width: 60vw;
+  height: 0.5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  background: goldenrod;
+}
+
+.serviceGroup {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.serviceGroupColumn {
+  min-width: 200px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.serviceTit {
+  font-family: "Galada", cursive;
+  font-size: 30px;
+}
+
+.switch {
+  display: none;
+}
+
+.switchLabel {
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none;
+  border: 2px white solid;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+}
+
+.switch:hover + .switchLabel {
+  border: goldenrod solid;
+  text-shadow: 0 0 10px goldenrod, 0 0 20px goldenrod;
+}
+
+.switch:checked + .switchLabel {
+  background-image: linear-gradient(138deg, #da2c4d, #f8ab37);
+  border: none;
+  box-shadow: 0 3px 5px 0 rgba(255, 151, 32, 0.363);
+  font-size: 22px;
+  text-shadow: 2px 2px 0 rgb(145, 0, 60);
+}
+
+.searchButton {
+  width: 300px;
+  height: 50px;
+  background-image: linear-gradient(135deg, #25aae1, #40e47f, #1fbe71, #009933);
+  background-size: 200% auto;
+  border: none;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  color: white;
+  text-shadow: 1.5px 1.5px 1px rgb(0, 75, 52);
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.1s ease-in-out;
+}
+.searchButton:hover {
+  text-shadow: 2px 2px 0 rgb(0, 82, 27);
+  background-position: right center;
+  box-shadow: 0 2px 5px 0 rgba(49, 196, 98, 0.521);
+  transform: scale(1.02);
+}
+.searchButton:active {
+  background-image: linear-gradient(to right, #1e9127, #005833);
+  background-size: 100%;
+  transform: scale(0.95);
+}
+
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.serviceResults {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
